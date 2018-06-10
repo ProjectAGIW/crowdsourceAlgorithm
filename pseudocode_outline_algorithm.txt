@@ -1,0 +1,27 @@
+#pseudocode
+
+Algorithm 1: Algorithm Outline
+Data: P, O, E
+Result: E, T , M
+T ← 0;
+M ← 0;
+v ← 0;
+while v == 0 do
+1 CQ ← set of questions to ask in current phase;
+2 H ← ∅;
+3 for I ∈ CQ do
+4 if I ∈/ E then
+5 I ← get new item from I;
+6 H ← H ∪ {I};
+7 ask H in parallel using crowdsourcing service;
+8 E ← E ∪ answers of H;
+9 T ← T + 1;
+10 M ← M+ ∣CQ∣;
+11 Fs ← ∅;
+12 // compute output condition;
+13 for (I, R(I)) ∈ E do
+14 if e(I) == 1 then
+
+Fs(S(R(I))) ← Fs(S(R(I))) + 1;
+
+15 v ← O(Fs);

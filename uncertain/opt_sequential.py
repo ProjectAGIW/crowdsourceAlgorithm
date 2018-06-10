@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: iso-8859-15 -*-
+
 items = []
 
 def opt_sequential(items,K1):
@@ -15,6 +18,8 @@ def opt_sequential(items,K1):
 
         if strategy(answers) == 0:
             del (items_copy[min_element])
+            
+            
         
 def calculate(items):
     cost = []

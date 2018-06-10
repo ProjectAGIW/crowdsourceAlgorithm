@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: iso-8859-15 -*-
+
 def uncertain_opt_cost(items,K1,strategy):
 
     n_plus, n_min = 0

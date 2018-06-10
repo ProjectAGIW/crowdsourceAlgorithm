@@ -1,36 +1,50 @@
-# items = dataset di input, output_condtion = condizione di output, properties = proprieta' da soddisfare,
+#!/usr/bin/env python
+# -*- coding: iso-8859-15 -*-
+
+# items = dataset di input, output_condition = condizione di output, properties = proprieta' da soddisfare,
 # questions = numero di domande, n_answers = numero delle risposte corrette
-n_answers = 0
+
+from model import Element
+
 questions = []
-items = [1, 2, 3, 4]
-properties = ['cat is on the table']
+items = []
 
+def algorithm_outline(items, output_condition):
 
-def algorithm_outline(items, output_condition, properties):
-
-    global n_answers
     items_evaluated = []
     latency = 0
-    n_questions = 0
-    epsilon = []
-    result = 0
+	cost = 0
     answers = []
-    while n_answers == 0 :
-        for i in questions:
-            if i not in items_evaluated:
+    while output_condition == False :
+        #selection of items
+        for item in items:
+            #take only items that are not evaluated yet
+            if not item.has_evaluation:
                 items_evaluated.append(i)
 
-        '''for i in items_evaluated:
-            current_answer = input(properties,i)
-            latency = latency +1
-            n_questions = n_questions + questions
-            answers = []
-            '''
-        for i,answers[i] in items_evaluated:
-            if answers[i] == 1:
-                n_answers = n_answers + 1
-        if output_condition == n_answers:
-            result = 1
+        #ask to human about the item        
+        for element,question in items_evaluated, questions:
+            current_answer = input(question,element)
+            latency += 1
+            cost += 1
+            #set evaluated to item
+            element.has_evaluation = True
+            #convert human's answer to 1/0 domain
+            element.properties = answer_to_property(current_answer)
+        
+        print("Latency is: " + str(latency))
+        print("Cost is : " + str(cost))
+            
+        for item,answers[i] in items_evaluated:
+            if item.properties == 1:
+                answers = answers + 1
+                
+        output_condition(answers)
 
+def output_condition(answers):
+    #omitted
+
+def answer_to_property(answer):
+    #omitted
 
 
