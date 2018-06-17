@@ -5,5 +5,4 @@ class Element():
 		self.has_property = has_property
 		
 	def __repr__(self):
-		print ''
-		
+		pass
