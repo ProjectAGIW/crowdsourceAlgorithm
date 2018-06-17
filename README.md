@@ -1,6 +1,4 @@
-# crowdsourceAlgorithm
+# crowdsource algorithm
 
-### Implementation of CROWDFIND algorithms 
-> Based on [this](https://ieeexplore.ieee.org/abstract/document/6816715/) article.
-
-After the algorithm outline, we analyzed the uncertain setting with cost-optimal case and both cost-optimal and phase-optimal.
+### Implementation of uncertain CROWDFIND algorithm
+> The algorithm could be found in [this](https://ieeexplore.ieee.org/abstract/document/6816715/) article.
