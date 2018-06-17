@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: iso-8859-15 -*-
 
+probability_threshold = 0.6
+
 def uncertain_opt_cost(items,K1,strategy):
 
     n_plus, n_min = 0
@@ -36,3 +38,14 @@ def calculate(items):
         temp = probability.item * n_questions
         cost.append(temp)
     return min(cost)
+
+#calculating y probability
+def expected_cost(pos_questions, neg_questions, tot_questions):
+    pos_probability = pos_questions / tot_questions
+    neg_probability = neg_questions / tot_questions
+    estimated_cost = pos_probability * pos_questions + neg_probability * neg_questions
+    if estimated_cost > probability_threshold:
+        return False
+    else:
+        return True
+
